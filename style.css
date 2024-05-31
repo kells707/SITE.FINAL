@@ -1,0 +1,366 @@
+:root {
+    --primary-color: #1E1E1E;
+    --secondary-color: #282828;
+    --highlight-color: #00BFFF;
+    --background-color: #121212;
+    --text-color: #E0E0E0;
+    --link-color: #00BFFF;
+    --link-hover-color: #1E90FF;
+    --code-bg-color: #2e2e2e;
+    --code-color: #00ff00;
+    --fade-duration: 1s;
+    --font-family: 'Roboto', sans-serif;
+    --header-font: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn var(--fade-duration) ease-in-out;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px; /* Diminui o padding para diminuir o tamanho do cabeçalho */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideIn var(--fade-duration) ease-in-out;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: 50px; /* Diminui o tamanho do logo */
+    height: auto;
+    margin-bottom: 5px;
+}
+
+header h1 {
+    margin: 0;
+    font-family: var(--header-font);
+    font-size: 2rem; /* Diminui o tamanho do título */
+}
+
+nav {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; 
+    gap: 10px; /* Diminui o espaçamento entre os itens do menu */
+    animation: fadeIn var(--fade-duration) ease-in-out;
+}
+
+nav ul li a {
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px; /* Diminui o padding dos itens do menu */
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+    background-color: var(--secondary-color); 
+}
+
+nav ul li a:hover {
+    background-color: var(--highlight-color);
+    color: var(--background-color);
+    transform: scale(1.1);
+}
+
+main {
+    flex: 1;
+    padding: 20px 10px; /* Diminui o padding do main */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    animation: slideIn var(--fade-duration) ease-in-out;
+    position: relative; /* Remove a fixação do rodapé */
+}
+
+.content-section {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    animation: fadeIn var(--fade-duration) ease-in-out;
+    background-color: var(--primary-color);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.content-section.active {
+    display: block;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, #1e1e1e, #282828);
+    padding: 20px 10px; /* Diminui o padding da seção home */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#home h2 {
+    color: var(--highlight-color);
+    font-size: 2rem; /* Diminui o tamanho do subtítulo */
+    margin-bottom: 20px;
+}
+
+#home img {
+    width: 80px; /* Diminui o tamanho da imagem */
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#home p {
+    font-size: 1rem; /* Diminui o tamanho do parágrafo */
+    max-width: 800px;
+    margin-bottom: 20px; /* Diminui o espaço abaixo do parágrafo */
+}
+
+#home .tutorial-section, #home .additional-resources {
+    padding: 20px; /* Diminui o padding das seções de tutorial e recursos adicionais */
+    margin: 20px 0;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+}
+
+#home h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem; /* Diminui o tamanho do título */
+    color: var(--highlight-color);
+}
+
+#home ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1rem; /* Diminui o tamanho dos itens da lista */
+}
+
+#home ul li {
+    margin-bottom: 10px;
+    background-color: var(--secondary-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+#home ul li:hover {
+    transform: scale(1.05);
+}
+
+.copy-message {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--highlight-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.copy-message.show {
+    opacity: 1;
+    transform: translateY(-20px);
+    transition-delay: 0.2s;
+}
+
+#references {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 800px;
+    margin: 20px auto;
+    animation: fadeIn var(--fade-duration) ease-in-out;
+}
+
+#references h2 {
+    color: var(--highlight-color);
+    margin-bottom: 10px;
+}
+
+#references ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#references ul li {
+    margin-bottom: 5px;
+}
+
+#references ul li a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#references ul li a:hover {
+    color: var(--link-hover-color);
+}
+
+.language-image {
+    width: 150px; 
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp var(--fade-duration) ease-in-out;
+}
+
+.content-section h2, .content-section h3, .content-section p, .content-section ul {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.content-section ul {
+    padding-left: 20px;
+}
+
+.content-section ul li {
+    margin-bottom: 5px;
+}
+
+.content-section .links, .content-section .tutorial-section, .content-section .best-practices, .content-section .comparison, .content-section .case-studies, .content-section .additional-resources {
+    margin-top: 20px;
+}
+
+.content-section .links a, .content-section .tutorial-section a, .content-section .additional-resources a {
+    display: block;
+    color: var(--link-color);
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+.content-section .links a:hover, .content-section .tutorial-section a:hover, .content-section .additional-resources a:hover {
+    color: var(--link-hover-color);
+}
+
+.content-section .code-example {
+    background-color: var(--code-bg-color);
+    color: var(--code-color);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    overflow-x: auto;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.content-section .code-example pre {
+    margin: 0;
+}
+
+.content-section .copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.content-section .copy-button:hover {
+    transform: scale(1.1);
+}
+
+.content-section .copy-button img {
+    width: 20px;
+    height: 20px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover, a:focus {
+    color: var(--link-hover-color);
+}
