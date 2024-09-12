@@ -19,12 +19,5 @@ O site contém seções dedicadas a várias linguagens de programação, incluin
 - script.js: Contém os scripts JavaScript para interatividade do site.
 
 ## Instalação
-
-Para rodar o projeto localmente, siga os passos abaixo:
-
-1. Clone o repositório para o seu ambiente local:
-
-   ```bash
-   git clone https://github.com/kells707/SITE.FINAL
-2. Link para acessar o site
+1. Link para acessar o site
    https://kells707.github.io/SITE.FINAL/      
